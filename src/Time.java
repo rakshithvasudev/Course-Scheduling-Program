@@ -166,7 +166,7 @@ public class Time implements Cloneable, Comparable<Time> {
 
     @Override
     public String toString() {
-        return "0"+this.hour+":"+this.minute+" "+this.PM;
+        return ((this.getHour()/10)>1?"":"0")+this.getHour()+":"+this.minute+(this.isPM()?" PM":" AM");
     }
 }
 
