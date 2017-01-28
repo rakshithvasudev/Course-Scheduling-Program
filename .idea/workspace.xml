@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d460dfe1-6108-42e8-9146-35ea397745df" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Time.java" afterPath="$PROJECT_DIR$/src/Time.java" />
-    </list>
+    <list default="true" id="d460dfe1-6108-42e8-9146-35ea397745df" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,8 +19,8 @@
       <file leaf-file-name="Time.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Time.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1388">
-              <caret line="166" column="2" lean-forward="false" selection-start-line="166" selection-start-column="2" selection-end-line="169" selection-end-column="5" />
+            <state relative-caret-position="436">
+              <caret line="101" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
               <folding>
                 <element signature="e#4254#4255#0" expanded="true" />
                 <element signature="e#4318#4319#0" expanded="true" />
@@ -624,12 +622,12 @@
       <workItem from="1485465443568" duration="6569000" />
       <workItem from="1485499432428" duration="1315000" />
       <workItem from="1485538636933" duration="5342000" />
-      <workItem from="1485573175234" duration="4493000" />
+      <workItem from="1485573175234" duration="4894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31591000" />
+    <option name="totallyTimeSpent" value="31992000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3856" height="2098" extended-state="0" />
@@ -1004,8 +1002,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Time.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1388">
-          <caret line="166" column="2" lean-forward="false" selection-start-line="166" selection-start-column="2" selection-end-line="169" selection-end-column="5" />
+        <state relative-caret-position="436">
+          <caret line="101" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
           <folding>
             <element signature="e#4254#4255#0" expanded="true" />
             <element signature="e#4318#4319#0" expanded="true" />
