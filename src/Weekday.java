@@ -28,14 +28,8 @@ public enum Weekday {
         } else if (Pattern.matches("[F f][R r][I i][D d][A a][Y y]", s)) {
             return Weekday.FRIDAY;
         } else {
-            try {
-                throw new IllegalArgumentException("Threw an IllegalArgumentException");
-            } catch (IllegalArgumentException e) {
-                System.out.println("Caught an IllegalArgumentException" + e.getMessage());
-            }
+            throw new IllegalArgumentException("This is an Illegal Arguement Exception");
         }
-        return Weekday.MONDAY;
-
     }
 
     /**
@@ -53,8 +47,10 @@ public enum Weekday {
             return "R";
         }else if(this.equals(Weekday.FRIDAY)){
             return "F";
+        }else{
+            throw new IllegalArgumentException("This is an Illegal Arguement Exception");
         }
-        return "M";
+
     }
 
     //Return the title case for Weekday Enum
