@@ -13,6 +13,7 @@ public class TimeTest {
 
         Assert.assertEquals("Time Matching has an issue",
                 -1,time1.compareTo(time2));
+        Assert.assertFalse("Time matching has an issue",time1.compareTo(time2)==0);
 
     }
 

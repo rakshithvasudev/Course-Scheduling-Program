@@ -19,17 +19,17 @@ public class Time implements Cloneable, Comparable<Time> {
         String[] splitArray = Str.split(":|\\s");
         int hour = Integer.parseInt(splitArray[0]);
         int minute = Integer.parseInt(splitArray[1]);
-        boolean AM = false;
+        boolean PM = false;
 
 
         if (splitArray[2].equals("PM")) {
-            AM = false;
-        } else if (splitArray[2].equals("PM")) {
-            AM = true;
+            return new Time(hour, minute, true);
+        } else if (!(splitArray[2].equals("PM"))) {
+            return new Time(hour, minute, false);
         } else if (splitArray[0].isEmpty() || splitArray[1].isEmpty() || splitArray[2].isEmpty()) {
             throw new IllegalArgumentException("This is an Illegal Argument");
         }
-        return new Time(hour, minute, AM);
+        return new Time(hour, minute, PM);
     }
 
     @Override
