@@ -1,14 +1,16 @@
+import java.util.Set;
+
 /**
  * Created by Rakshith on 1/29/2017.
  */
-public class Course {
+public class Course implements Cloneable{
     private String name;
     private int credits;
-    private Weekday days;
+    private Set<Weekday>  days;
     private Time startTime;
     private int duration;
 
-    public Course(String name, int credits, Weekday days, Time startTime, int duration) {
+    public Course(String name, int credits, Set<Weekday> days, Time startTime, int duration) {
         this.name = name;
         this.credits = credits;
         this.days = days;
@@ -53,4 +55,15 @@ public class Course {
     public String toString() {
         return this.name+", " + this.credits+", "+ this.days+", "+ this.startTime+", "+this.duration;
     }
+
+    @Override
+    public Course clone() {
+        try {
+            return (Course) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

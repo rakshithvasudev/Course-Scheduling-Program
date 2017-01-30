@@ -1,5 +1,8 @@
 /**
  * Created by Rakshith on 1/26/2017.
+ * This Class is responsible for creating
+ * the time object. Implements Cloneable to
+ * override the time object.
  */
 public class Time implements Cloneable, Comparable<Time> {
 
@@ -57,20 +60,16 @@ public class Time implements Cloneable, Comparable<Time> {
         int objectHoursTotalTime = 12;
         int toObjectAddRemainingHours = o.hour % 12;
         int objectMinutes = o.getMinute();
-
-
         if (this.PM) {
             thisConvertTo24HoursFlag = true;
         } else {
             thisConvertTo24HoursFlag = false;
         }
-
         if (thisConvertTo24HoursFlag) {
             if (this.hour > 12) {
                 thisHoursTotalTime += toThisAddRemainingHours;
             }
         }
-
         if (o.PM) {
             objectConvertTo24HoursFlag = true;
         } else {
@@ -82,8 +81,6 @@ public class Time implements Cloneable, Comparable<Time> {
                 objectHoursTotalTime += toObjectAddRemainingHours;
             }
         }
-
-
         if (thisHoursTotalTime > objectHoursTotalTime) {
             return 1;
         } else if (thisHoursTotalTime == objectHoursTotalTime) {
@@ -97,7 +94,6 @@ public class Time implements Cloneable, Comparable<Time> {
         } else {
             return -1;
         }
-
         return 22;
     }
 
@@ -117,7 +113,6 @@ public class Time implements Cloneable, Comparable<Time> {
     }
 
     public boolean isPM() {
-
         if (this.PM) {
             return true;
         }
@@ -129,14 +124,11 @@ public class Time implements Cloneable, Comparable<Time> {
         int addMinutesAfterHours = this.minute % 60;
         int factorHour = (int) Math.floor(this.minute / 60);
         boolean changedHourFlag = false;
-
-
         if (this.minute >= 60) {
             this.minute = addMinutesAfterHours;
             this.hour += factorHour;
             changedHourFlag = true;
         }
-
         if (this.PM && this.getHour() >= 12) {
             if (this.getMinute() >= 0) {
                 this.PM = false;
@@ -152,7 +144,6 @@ public class Time implements Cloneable, Comparable<Time> {
             if (this.getMinute() >= 0) {
                 this.PM = true;
             }
-
             this.hour = this.hour % 12;
             if (!changedHourFlag) {
                 this.hour += factorHour;
@@ -160,13 +151,12 @@ public class Time implements Cloneable, Comparable<Time> {
             if (this.hour == 0) {
                 this.hour = 12;
             }
-
         }
     }
 
     @Override
     public String toString() {
-        return ((this.getHour()/10)>1?"":"0")+this.getHour()+":"+this.minute+(this.isPM()?" PM":" AM");
+        return ((this.getHour() / 10) > 1 ? "" : "0") + this.getHour() + ":" + this.minute + (this.isPM() ? " PM" : " AM");
     }
 }
 

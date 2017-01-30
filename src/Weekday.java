@@ -2,6 +2,8 @@ import java.util.regex.Pattern;
 
 /**
  * Created by Rakshith on 1/25/2017.
+ * This Enum Contains the method for
+ * weekdays and contains the actual weekdays.
  */
 public enum Weekday {
     MONDAY,
@@ -11,9 +13,14 @@ public enum Weekday {
     FRIDAY;
 
     /**
+     * Checks to see if the text passed is an Equivalent
+     * Weekday. Converts to that into its respective Enum for that Week.
+     * Returns that Enum object. If String passed is not matching, then it
+     * throws IllegalArgumentException.
      *
-     * @param s
-     * @return
+     * Uses Regular Expression matching to see if text provided matches.
+     * @param s :String s
+     * @return : Equivalent Enum Object.
      */
 
     public static Weekday fromString(String s) {
@@ -33,27 +40,30 @@ public enum Weekday {
     }
 
     /**
-     *
-     * @return
+     * @returns the short form of the objects passed to the method.
+     * if not appropriate, then, it returns and IllegalArgumentException.
      */
     public String toShortName() {
-        if(this.equals(Weekday.MONDAY)){
+        if (this.equals(Weekday.MONDAY)) {
             return "M";
-        }else if(this.equals(Weekday.TUESDAY)){
+        } else if (this.equals(Weekday.TUESDAY)) {
             return "T";
-        }else if(this.equals(Weekday.WEDNESDAY)){
+        } else if (this.equals(Weekday.WEDNESDAY)) {
             return "W";
-        }else if(this.equals(Weekday.THURSDAY)){
+        } else if (this.equals(Weekday.THURSDAY)) {
             return "R";
-        }else if(this.equals(Weekday.FRIDAY)){
+        } else if (this.equals(Weekday.FRIDAY)) {
             return "F";
-        }else{
+        } else {
             throw new IllegalArgumentException("This is an Illegal Arguement Exception");
         }
 
     }
 
-    //Return the title case for Weekday Enum
+    /**
+     * Return the title case for Weekday Enum
+      * @return
+     */
     @Override
     public String toString() {
         char[] runnableString = this.name().toCharArray();

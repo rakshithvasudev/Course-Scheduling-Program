@@ -1,7 +1,5 @@
 import java.io.PrintStream;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Rakshith on 1/29/2017.
@@ -30,8 +28,8 @@ public class Schedule {
     }
 
 
-    public Course getCourse(Weekday day,Time time){
-        return new Course("Math",3,Weekday.MONDAY,new Time(3,30,false),30);
+    public Course getCourse( Weekday  day, Time time){
+        return new Course("Math",3, EnumSet.of(Weekday.FRIDAY),new Time(3,30,false),30);
     }
 
     public void save(PrintStream printStream, Comparator<Course> comparator){
@@ -49,19 +47,19 @@ public class Schedule {
     }
 
     public void remove(Weekday day,Time time){
-        Course removedCourse = findCourseToRemove(day,time);
-        classSchedules.remove(removedCourse);
+       Course removedCourse = findCourseToRemove(day,time);
+         classSchedules.remove(removedCourse);
     }
 
-    private Course findCourseToRemove(Weekday day,Time time){
-       Course c1=new Course("sample",3,Weekday.MONDAY,new Time(2,30,true),41);
+     private Course findCourseToRemove(Weekday day,Time time){
+       Course c1=new Course("sample",3,EnumSet.of(Weekday.MONDAY,Weekday.WEDNESDAY),new Time(2,30,true),41);
         for(int i = 0; i< classSchedules.size(); i++){
             if(classSchedules.get(i).contains(day,time)){
                 c1=classSchedules.get(i);
-            }
-        }
-       return c1;
-    }
+             }
+         }
+        return c1;
+   }
 }
 
 
