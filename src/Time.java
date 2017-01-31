@@ -31,10 +31,11 @@ public class Time implements Cloneable, Comparable<Time> {
              PM=true;
         } else if (!(splitArray[2].equals("PM"))) {
             PM = false;
-        } else if (splitArray[0].isEmpty() || splitArray[1].isEmpty() ||
+        } else if(splitArray[0].isEmpty() || splitArray[1].isEmpty() ||
                 splitArray[2].isEmpty() ||Pattern.matches("[a-z]+",splitArray[0])
                 || Pattern.matches("[a-z]+",splitArray[1])||
-                !(Pattern.matches("[AaPp][Mm]",splitArray[2]))) {
+                !(Pattern.matches("[AP][M]",splitArray[2])))
+        {
             throw new IllegalArgumentException("This is an Illegal Argument");
         }
         return new Time(hour, minute, PM);
@@ -78,9 +79,12 @@ public class Time implements Cloneable, Comparable<Time> {
         return -1;
     }
 
-    public boolean equals(Object o) {
+    public boolean equals(Time o) {
         if (o.getClass() == Time.class) {
-            return true;
+            if(this.isPM()==o.isPM()){
+                return true;
+            }
+
         }
         return false;
     }

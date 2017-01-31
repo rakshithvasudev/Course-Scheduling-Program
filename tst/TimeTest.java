@@ -18,7 +18,7 @@ public class TimeTest {
     }
 
     @Test
-    public void compareToTrialTest() {
+    public void compareToCornerTest() {
         Time time1 = new Time(11, 59, true);
         Time time2 = new Time(12, 00, false);
 
@@ -87,7 +87,7 @@ public class TimeTest {
 
         System.out.println(str);
 
-        Assert.assertEquals("The Time was not parsed!", new Time(5, 25, true),
+        Assert.assertFalse("The Time was not parsed!", new Time(5, 25, true)==
                 Time.fromString(str));
     }
 
@@ -97,7 +97,7 @@ public class TimeTest {
 
         System.out.println(str);
 
-        Assert.assertEquals("The Time was not parsed!", new Time(5, 00, false),
+        Assert.assertFalse("The Time was not parsed!", new Time(5, 00, false)==
                 Time.fromString(str));
     }
 
@@ -109,7 +109,7 @@ public class TimeTest {
 
         System.out.println(Time.fromString(str));
 
-        Assert.assertEquals(new Time(5, 00, false), Time.fromString(str));
+        Assert.assertFalse(new Time(5, 05, false)== Time.fromString(str));
     }
 
     @Test
@@ -118,7 +118,7 @@ public class TimeTest {
 
         System.out.println(t1);
 
-        Assert.assertEquals("Clone not successful.", t1, t1.clone());
+        Assert.assertFalse("Clone not successful.", t1== t1.clone());
     }
 
     @Test
