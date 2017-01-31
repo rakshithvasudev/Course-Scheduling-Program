@@ -12,11 +12,15 @@ public class Time implements Cloneable, Comparable<Time> {
     private int minute;
     private boolean PM;
 
-    public Time(int hour, int minute, boolean PM) {
+    public Time(int hour, int minute, boolean PM) throws IllegalArgumentException {
+
+
         this.hour = hour;
         this.minute = minute;
         this.PM = PM;
+
     }
+
 
 
     public static Time fromString(String Str) {
@@ -38,6 +42,10 @@ public class Time implements Cloneable, Comparable<Time> {
         {
             throw new IllegalArgumentException("This is an Illegal Argument");
         }
+
+
+
+
         return new Time(hour, minute, PM);
     }
 
@@ -105,6 +113,9 @@ public class Time implements Cloneable, Comparable<Time> {
     }
 
     public void shift(int minutes) {
+        if(minutes<0){
+            throw new IllegalArgumentException("No Negative Values Allowed");
+        }
         this.minute += minutes;
         int addMinutesAfterHours = this.minute % 60;
         int factorHour = (int) Math.floor(this.minute / 60);
@@ -137,6 +148,7 @@ public class Time implements Cloneable, Comparable<Time> {
                 this.hour = 12;
             }
         }
+
     }
 
     @Override

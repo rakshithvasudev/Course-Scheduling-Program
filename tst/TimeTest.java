@@ -171,6 +171,51 @@ public class TimeTest {
         Assert.assertTrue("isPM() failed!", t1.isPM());
     }
 
+    @Test
+    public void ShiftTest() {
+        Time t1 = new Time(5, 5, true);
+        t1.shift(30);
+
+        System.out.println(t1.toString());
+
+        Assert.assertTrue("shift Failed", new Time(5,35,true).equals(t1));
+
+    }
+
+    @Test
+    public void ShiftPositiveTest() {
+        Time t1 = new Time(5, 5, true);
+        t1.shift(60);
+
+        System.out.println(t1.toString());
+
+        Assert.assertTrue("shift Failed", new Time(6,05,true).equals(t1));
+
+    }
+
+
+    @Test
+    public void ShiftNegativeTest() {
+        Time t1 = new Time(5, 5, true);
+
+        try{
+        t1.shift(-5);
+
+        System.out.println(t1.toString());
+
+        Assert.fail();}
+        catch (IllegalArgumentException e){
+            e.printStackTrace();
+        }
+
+
+
+    }
+
+
+
+
+
 
 
 }
