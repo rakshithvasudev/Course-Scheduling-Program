@@ -35,7 +35,7 @@ public enum Weekday {
         } else if (Pattern.matches("[F f][R r][I i][D d][A a][Y y]", s)) {
             return Weekday.FRIDAY;
         } else {
-            throw new IllegalArgumentException("This is an Illegal Arguement Exception");
+            throw new IllegalArgumentException("This is an Illegal Argument Exception");
         }
     }
 

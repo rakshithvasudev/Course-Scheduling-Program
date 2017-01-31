@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 /**
  * Created by Rakshith on 1/26/2017.
  * This Class is responsible for creating
@@ -29,7 +31,10 @@ public class Time implements Cloneable, Comparable<Time> {
              PM=true;
         } else if (!(splitArray[2].equals("PM"))) {
             PM = false;
-        } else if (splitArray[0].isEmpty() || splitArray[1].isEmpty() || splitArray[2].isEmpty()) {
+        } else if (splitArray[0].isEmpty() || splitArray[1].isEmpty() ||
+                splitArray[2].isEmpty() ||Pattern.matches("[a-z]+",splitArray[0])
+                || Pattern.matches("[a-z]+",splitArray[1])||
+                !(Pattern.matches("[AaPp][Mm]",splitArray[2]))) {
             throw new IllegalArgumentException("This is an Illegal Argument");
         }
         return new Time(hour, minute, PM);
@@ -128,7 +133,7 @@ public class Time implements Cloneable, Comparable<Time> {
 
     @Override
     public String toString() {
-        return (((this.hour/10)>1)?"":"0") + this.getHour() + ":" +((this.minute/10)>1?"":"0")+this.minute + (this.isPM() ? " PM" : " AM");
+        return (((this.hour>=10)?"":"0")+ this.getHour() + ":" +((this.minute/10)>1?"":"0")+this.minute + (this.isPM() ? " PM" : " AM"));
     }
 }
 
