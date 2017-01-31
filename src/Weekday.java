@@ -24,15 +24,15 @@ public enum Weekday {
      */
 
     public static Weekday fromString(String s) {
-        if (Pattern.matches("[M m][O o][N n][D d][A a][Y y]", s)) {
+        if (Pattern.matches("[M m][O o][N n][D d][A a][Y y]", s) || Pattern.matches("[mM]",s)) {
             return Weekday.MONDAY;
-        } else if (Pattern.matches("[T t][U u][E e][S s][D d][A a][Y y]", s)) {
+        } else if (Pattern.matches("[T t][U u][E e][S s][D d][A a][Y y]", s)|| Pattern.matches("[Tt]",s)) {
             return Weekday.TUESDAY;
-        } else if (Pattern.matches("[W w][E e][D d][N n][E e][S s][D d][A a][Y y]", s)) {
+        } else if (Pattern.matches("[W w][E e][D d][N n][E e][S s][D d][A a][Y y]", s)|| Pattern.matches("[Ww]",s)) {
             return Weekday.WEDNESDAY;
-        } else if (Pattern.matches("[T t][H h][U u][R r][S s][D d][A a][Y y]", s)) {
+        } else if (Pattern.matches("[T t][H h][U u][R r][S s][D d][A a][Y y]", s)|| Pattern.matches("[Rr]",s)) {
             return Weekday.THURSDAY;
-        } else if (Pattern.matches("[F f][R r][I i][D d][A a][Y y]", s)) {
+        } else if (Pattern.matches("[F f][R r][I i][D d][A a][Y y]", s)|| Pattern.matches("[Ff]",s)) {
             return Weekday.FRIDAY;
         } else {
             throw new IllegalArgumentException("This is an Illegal Argument Exception");
