@@ -65,6 +65,7 @@ public class Time implements Cloneable, Comparable<Time> {
                 if (this.minute == o.minute) {
                     return 0;
                 }
+                //add another if minute comparision  
             }
             if(this.hour>o.hour){
                 return 1;
@@ -134,6 +135,16 @@ public class Time implements Cloneable, Comparable<Time> {
     @Override
     public String toString() {
         return (((this.hour>=10)?"":"0")+ this.getHour() + ":" +((this.minute/10)>1?"":"0")+this.minute + (this.isPM() ? " PM" : " AM"));
+    }
+
+    @Override
+    public int hashCode() {
+
+        int a =31;
+        a+=getHour()*17;
+        a+=getMinute()*17;
+        a+=(isPM()?7:13);
+        return a;
     }
 }
 

@@ -18,6 +18,19 @@ public class TimeTest {
     }
 
     @Test
+    public void compareToTrialTest() {
+        Time time1 = new Time(11, 59, true);
+        Time time2 = new Time(12, 00, false);
+
+        System.out.println(time1.toString());
+        System.out.println(time2.toString());
+
+        Assert.assertEquals("Time Matching has an issue",
+                1, time1.compareTo(time2));
+
+    }
+
+    @Test
     public void compareToTest() {
         Time time1 = new Time(8, 21, false);
         Time time2 = new Time(6, 23, true);
@@ -157,6 +170,7 @@ public class TimeTest {
 
         Assert.assertTrue("isPM() failed!", t1.isPM());
     }
+
 
 
 }
