@@ -51,7 +51,19 @@ public class WeekdayTest {
         Assert.assertEquals("Weekday mismatch",weekDay, weekday.toShortName());
     }
 
+    @Test
+    public  void toStringTest(){
+        Weekday weekday = Weekday.MONDAY;
+        String weekDay = "Monday";
+        Assert.assertEquals(weekDay,weekday.toString());
+    }
 
+    @Test
+    public  void toStringPositiveTest(){
+        Weekday weekday = Weekday.MONDAY;
+        String weekDay = "Monday";
+        Assert.assertTrue("To String is not proper",weekDay.compareTo(weekday.toString())==0);
+    }
 
 
 

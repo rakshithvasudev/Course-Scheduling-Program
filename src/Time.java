@@ -65,7 +65,10 @@ public class Time implements Cloneable, Comparable<Time> {
                 if (this.minute == o.minute) {
                     return 0;
                 }
-                //add another if minute comparision  
+                //add another if minute comparision
+                if(this.minute>o.minute){
+                    return 1;
+                }
             }
             if(this.hour>o.hour){
                 return 1;
