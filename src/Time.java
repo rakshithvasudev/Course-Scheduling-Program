@@ -8,12 +8,12 @@ public class Time implements Cloneable, Comparable<Time> {
 
     private int hour;
     private int minute;
-    private boolean PM = false;
+    private boolean PM;
 
     public Time(int hour, int minute, boolean PM) {
         this.hour = hour;
         this.minute = minute;
-        this.PM = false;
+        this.PM = PM;
     }
 
 
@@ -26,15 +26,20 @@ public class Time implements Cloneable, Comparable<Time> {
 
 
         if (splitArray[2].equals("PM")) {
-            return new Time(hour, minute, true);
+             PM=true;
         } else if (!(splitArray[2].equals("PM"))) {
-            return new Time(hour, minute, false);
+            PM = false;
         } else if (splitArray[0].isEmpty() || splitArray[1].isEmpty() || splitArray[2].isEmpty()) {
             throw new IllegalArgumentException("This is an Illegal Argument");
         }
         return new Time(hour, minute, PM);
     }
 
+
+    /**
+     *
+     * @returns: Cloned Time Object.
+     */
     @Override
     public Time clone() {
         try {
@@ -48,53 +53,20 @@ public class Time implements Cloneable, Comparable<Time> {
 
     @Override
     public int compareTo(Time o) {
-
-        //Variables this Time object
-        boolean thisConvertTo24HoursFlag;
-        int thisHoursTotalTime = 12;
-        int toThisAddRemainingHours = this.hour % 12;
-        int thisMinutes = this.getMinute();
-
-        //Variables o Time object
-        boolean objectConvertTo24HoursFlag;
-        int objectHoursTotalTime = 12;
-        int toObjectAddRemainingHours = o.hour % 12;
-        int objectMinutes = o.getMinute();
-        if (this.PM) {
-            thisConvertTo24HoursFlag = true;
-        } else {
-            thisConvertTo24HoursFlag = false;
-        }
-        if (thisConvertTo24HoursFlag) {
-            if (this.hour > 12) {
-                thisHoursTotalTime += toThisAddRemainingHours;
-            }
-        }
-        if (o.PM) {
-            objectConvertTo24HoursFlag = true;
-        } else {
-            objectConvertTo24HoursFlag = false;
-        }
-
-        if (objectConvertTo24HoursFlag) {
-            if (o.hour > 12) {
-                objectHoursTotalTime += toObjectAddRemainingHours;
-            }
-        }
-        if (thisHoursTotalTime > objectHoursTotalTime) {
+        if (this.isPM() && !(o.isPM())) {
             return 1;
-        } else if (thisHoursTotalTime == objectHoursTotalTime) {
-            if (thisMinutes == objectMinutes) {
-                return 0;
-            } else if (thisMinutes > objectMinutes) {
-                return 1;
-            } else if (thisMinutes < objectMinutes) {
-                return -1;
+        } else if (this.isPM() == o.isPM()) {
+            if (this.hour == o.hour) {
+                if (this.minute == o.minute) {
+                    return 0;
+                }
             }
-        } else {
-            return -1;
+            if(this.hour>o.hour){
+                return 1;
+            }
         }
-        return 22;
+
+        return -1;
     }
 
     public boolean equals(Object o) {
@@ -156,7 +128,7 @@ public class Time implements Cloneable, Comparable<Time> {
 
     @Override
     public String toString() {
-        return ((this.getHour() / 10) > 1 ? "" : "0") + this.getHour() + ":" + this.minute + (this.isPM() ? " PM" : " AM");
+        return (((this.hour/10)>1)?"":"0") + this.getHour() + ":" +((this.minute/10)>1?"":"0")+this.minute + (this.isPM() ? " PM" : " AM");
     }
 }
 
