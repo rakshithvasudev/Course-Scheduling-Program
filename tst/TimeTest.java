@@ -84,11 +84,9 @@ public class TimeTest {
     @Test
     public void fromStringTest() {
         String str = "05:25 PM";
-
         System.out.println(str);
-
-        Assert.assertFalse("The Time was not parsed!", new Time(5, 25, true)==
-                Time.fromString(str));
+        Assert.assertEquals("The Time was not parsed!",0, new Time(5, 25, true).compareTo(
+                Time.fromString(str)));
     }
 
     @Test
@@ -97,8 +95,8 @@ public class TimeTest {
 
         System.out.println(str);
 
-        Assert.assertFalse("The Time was not parsed!", new Time(5, 00, false)==
-                Time.fromString(str));
+        Assert.assertEquals("The Time was not parsed!",0,new Time(5, 00, false).compareTo(
+                Time.fromString(str)));
     }
 
     @Test
@@ -109,7 +107,7 @@ public class TimeTest {
 
         System.out.println(Time.fromString(str));
 
-        Assert.assertFalse(new Time(5, 05, false)== Time.fromString(str));
+        Assert.assertEquals("Corner Test Failed",0,new Time(5, 05, false).compareTo(Time.fromString(str)));
     }
 
     @Test
@@ -118,7 +116,7 @@ public class TimeTest {
 
         System.out.println(t1);
 
-        Assert.assertFalse("Clone not successful.", t1== t1.clone());
+        Assert.assertEquals("Clone not successful", 0,t1.compareTo( t1.clone()));
     }
 
     @Test

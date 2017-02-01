@@ -1,3 +1,4 @@
+import java.util.IllegalFormatCodePointException;
 import java.util.regex.Pattern;
 
 /**
@@ -13,8 +14,9 @@ public class Time implements Cloneable, Comparable<Time> {
     private boolean PM;
 
     public Time(int hour, int minute, boolean PM) throws IllegalArgumentException {
-
-
+        if (hour > 12 || hour < 0 || minute >=60 || minute <0 ) {
+            throw new IllegalArgumentException("Incorrect Input to Time constructor");
+        }
         this.hour = hour;
         this.minute = minute;
         this.PM = PM;
@@ -23,29 +25,29 @@ public class Time implements Cloneable, Comparable<Time> {
 
 
 
-    public static Time fromString(String Str) {
+    public static Time fromString(String str) {
+        //hh:hh am
+        if(str.length() != 8)
+            throw new IllegalArgumentException("length should be 8");
 
-        String[] splitArray = Str.split(":|\\s");
-        int hour = Integer.parseInt(splitArray[0]);
-        int minute = Integer.parseInt(splitArray[1]);
-        boolean PM = false;
+        if(str.charAt(2) != ':' || str.charAt(5) != ' ')
+            throw new IllegalArgumentException("missing colon or space in the right place");
 
+        if(!str.substring(6).equals("PM") && !str.substring(6).equals("AM"))
+            throw new IllegalArgumentException("Missing AM or PM at the end");
 
-        if (splitArray[2].equals("PM")) {
-             PM=true;
-        } else if (!(splitArray[2].equals("PM"))) {
-            PM = false;
-        } else if(splitArray[0].isEmpty() || splitArray[1].isEmpty() ||
-                splitArray[2].isEmpty() ||Pattern.matches("[a-z]+",splitArray[0])
-                || Pattern.matches("[a-z]+",splitArray[1])||
-                !(Pattern.matches("[AP][M]",splitArray[2])))
-        {
-            throw new IllegalArgumentException("This is an Illegal Argument");
+        String[] splitArray = str.split(":|\\s");
+
+        int hour = 0;
+        int minute = 0;
+        try {
+            hour = Integer.parseInt(splitArray[0]);
+            minute = Integer.parseInt(splitArray[1]);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException(e);
         }
 
-
-
-
+        boolean PM = splitArray[2].equals("PM");
         return new Time(hour, minute, PM);
     }
 
@@ -87,11 +89,11 @@ public class Time implements Cloneable, Comparable<Time> {
         return -1;
     }
 
-    public boolean equals(Time o) {
-        if (o.getClass() == Time.class) {
-            if(this.isPM()==o.isPM()){
-                return true;
-            }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null && obj.getClass() == Time.class) {
+           Time other = (Time) obj;
+           return this.isPM()==other.isPM() && this.minute==other.minute && this.hour==other.hour ;
 
         }
         return false;
@@ -158,13 +160,17 @@ public class Time implements Cloneable, Comparable<Time> {
 
     @Override
     public int hashCode() {
-
         int a =31;
-        a+=getHour()*17;
-        a+=getMinute()*17;
-        a+=(isPM()?7:13);
+        a = 31 * a + hour;
+        a = 31 * a + minute;
+        a = 31 * a + (PM ? 1:0);
         return a;
     }
+
+
+
+
+
 }
 
 
