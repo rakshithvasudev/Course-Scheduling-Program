@@ -14,7 +14,7 @@ public class Time implements Cloneable, Comparable<Time> {
     private boolean PM;
 
     public Time(int hour, int minute, boolean PM) throws IllegalArgumentException {
-        if (hour > 12 || hour < 0 || minute >=60 || minute <0 ) {
+        if (hour > 12 || hour <=0 || minute >=60 || minute <0 ) {
             throw new IllegalArgumentException("Incorrect Input to Time constructor");
         }
         this.hour = hour;
@@ -118,6 +118,7 @@ public class Time implements Cloneable, Comparable<Time> {
         if(minutes<0){
             throw new IllegalArgumentException("No Negative Values Allowed");
         }
+
         this.minute += minutes;
         int addMinutesAfterHours = this.minute % 60;
         int factorHour = (int) Math.floor(this.minute / 60);
@@ -137,6 +138,7 @@ public class Time implements Cloneable, Comparable<Time> {
             }
             if (this.hour == 0) {
                 this.hour = 12;
+                this.PM = false;
             }
         } else if (!(this.PM) && this.getHour() >= 12) {
             if (this.getMinute() >= 0) {
@@ -148,22 +150,24 @@ public class Time implements Cloneable, Comparable<Time> {
             }
             if (this.hour == 0) {
                 this.hour = 12;
+                this.PM = false;
             }
         }
 
     }
 
+
     @Override
     public String toString() {
-        return (((this.hour>=10)?"":"0")+ this.getHour() + ":" +((this.minute/10)>1?"":"0")+this.minute + (this.isPM() ? " PM" : " AM"));
+        return (((this.hour>=10)?"":"0")+ this.getHour() + ":" +((this.minute)>=10?"":"0")+this.minute + (this.isPM() ? " PM" : " AM"));
     }
 
     @Override
     public int hashCode() {
         int a =31;
-        a = 31 * a + hour;
-        a = 31 * a + minute;
-        a = 31 * a + (PM ? 1:0);
+        a = 31 * a + this.hour;
+        a = 31 * a + this.minute;
+        a = 31 * a + (this.PM ? 1:0);
         return a;
     }
 

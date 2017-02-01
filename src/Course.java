@@ -1,3 +1,4 @@
+import java.util.EnumSet;
 import java.util.Set;
 
 /**
@@ -20,15 +21,39 @@ public class Course implements Cloneable{
 
 
     public boolean conflictsWith(Course course){
-        return true;
+//        Time thisEndTime = this.startTime;
+//        Time courseEndTime = course.startTime;
+//        thisEndTime.shift(this.duration);
+//        courseEndTime.shift(course.duration);
+
+        int netDuration = (this.duration>course.duration)?this.duration:course.duration;
+
+
+          return false;
+
+
+
+
     }
 
     public boolean contains(Weekday day, Time time){
         return false;
     }
 
-    public boolean equals(Object o){
-        return (Course.class==o.getClass());
+    @Override
+    public boolean equals(Object obj) {
+
+        if (obj!=null && obj.getClass() == Course.class) {
+            Course course = (Course) obj;
+            return (this.name.compareTo(course.name) ==0 &&
+                    this.credits == course.credits &&
+                    this.days == course.days &&
+                    this.startTime==course.startTime &&
+                    this.duration == course.duration);
+        }
+
+        return false;
+
     }
 
     public String getName() {
@@ -47,8 +72,10 @@ public class Course implements Cloneable{
         return duration;
     }
 
-    public Time getEndTime(){
-        return new Time(2,30,true);
+    public Time getEndTime() {
+        Time endTime = this.startTime;
+        endTime.shift(this.duration);
+        return endTime;
     }
 
     @Override
@@ -66,4 +93,14 @@ public class Course implements Cloneable{
         return null;
     }
 
+    @Override
+    public int hashCode() {
+        int a=31;
+        a =  31*this.startTime.getMinute()+this.startTime.getMinute();
+        a = 31*this.credits+this.credits;
+        a= 31*this.duration+this.duration;
+        a=31*this.days.size()+this.days.size();
+        return a;
+
+    }
 }
