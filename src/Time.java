@@ -94,7 +94,6 @@ public class Time implements Cloneable, Comparable<Time> {
         if (obj!=null && obj.getClass() == Time.class) {
            Time other = (Time) obj;
            return this.isPM()==other.isPM() && this.minute==other.minute && this.hour==other.hour ;
-
         }
         return false;
     }
@@ -119,43 +118,40 @@ public class Time implements Cloneable, Comparable<Time> {
             throw new IllegalArgumentException("No Negative Values Allowed");
         }
 
-        this.minute += minutes;
-        int addMinutesAfterHours = this.minute % 60;
-        int factorHour = (int) Math.floor(this.minute / 60);
-        boolean changedHourFlag = false;
-        if (this.minute >= 60) {
-            this.minute = addMinutesAfterHours;
-            this.hour += factorHour;
-            changedHourFlag = true;
+        boolean originalPM = this.isPM();
+        int totalMinutes=0;
+        if(this.isPM()) {
+            totalMinutes = this.hour * 60 + this.minute + minutes;
+            if (this.hour != 12) {
+                totalMinutes += 12 * 60;
+            }
         }
-        if (this.PM && this.getHour() >= 12) {
-            if (this.getMinute() >= 0) {
-                this.PM = false;
+
+        if(!this.isPM()) {
+            totalMinutes = this.hour * 60 + this.minute + minutes;
+            if (this.hour == 12) {
+                totalMinutes -= 12 * 60;
             }
-            this.hour = this.hour % 12;
-            if (!changedHourFlag) {
-                this.hour += factorHour;
-            }
-            if (this.hour == 0) {
-                this.hour = 12;
-                this.PM = false;
-            }
-        } else if (!(this.PM) && this.getHour() >= 12) {
-            if (this.getMinute() >= 0) {
-                this.PM = true;
-            }
-            this.hour = this.hour % 12;
-            if (!changedHourFlag) {
-                this.hour += factorHour;
-            }
-            if (this.hour == 0) {
-                this.hour = 12;
-                this.PM = false;
-            }
+
+        }
+
+        int timeInMinutes = totalMinutes%60;
+        int timeInHours = (totalMinutes-timeInMinutes)/60;
+        this.PM = false;
+
+        this.hour = timeInHours%24;
+        this.minute=timeInMinutes;
+
+        if(this.hour>=12){
+            this.hour=this.hour%12;
+            this.PM=true;
+        }
+
+        if(this.hour==0){
+            this.hour=12;
         }
 
     }
-
 
     @Override
     public String toString() {
@@ -170,11 +166,6 @@ public class Time implements Cloneable, Comparable<Time> {
         a = 31 * a + (this.PM ? 1:0);
         return a;
     }
-
-
-
-
-
 }
 
 

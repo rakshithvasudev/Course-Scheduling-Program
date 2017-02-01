@@ -21,22 +21,24 @@ public class Course implements Cloneable{
 
 
     public boolean conflictsWith(Course course){
-//        Time thisEndTime = this.startTime;
-//        Time courseEndTime = course.startTime;
-//        thisEndTime.shift(this.duration);
-//        courseEndTime.shift(course.duration);
 
-        int netDuration = (this.duration>course.duration)?this.duration:course.duration;
-
-
-          return false;
-
+         if(this.days.equals(course.days)) {
+             if (this.startTime.compareTo(course.startTime) == 0
+                    || this.getEndTime().compareTo(course.getEndTime()) == 0
+                    || this.startTime.compareTo(course.getEndTime()) != -1 && this.getEndTime().compareTo(course.getEndTime()) != -1) {
+                return true;
+            }
+        }
 
 
-
+        return false;
     }
 
     public boolean contains(Weekday day, Time time){
+       if(this.days.equals(EnumSet.of(day)) && this.startTime.equals(time)){
+           return true;
+       }
+
         return false;
     }
 
@@ -80,7 +82,12 @@ public class Course implements Cloneable{
 
     @Override
     public String toString() {
-        return this.name+", " + this.credits+", "+ this.days+", "+ this.startTime+", "+this.duration;
+        StringBuilder sb = new StringBuilder();
+
+        for (Weekday currentDay: this.days) {
+            sb.append(currentDay.toShortName());
+        }
+        return this.name+"," + this.credits+","+ sb+","+ this.startTime+","+this.duration;
     }
 
     @Override
@@ -96,10 +103,10 @@ public class Course implements Cloneable{
     @Override
     public int hashCode() {
         int a=31;
-        a =  31*this.startTime.getMinute()+this.startTime.getMinute();
+        a = 31*this.startTime.getMinute()+this.startTime.getMinute();
         a = 31*this.credits+this.credits;
-        a= 31*this.duration+this.duration;
-        a=31*this.days.size()+this.days.size();
+        a = 31*this.duration+this.duration;
+        a = 31*this.days.size()+this.days.size();
         return a;
 
     }
