@@ -11,12 +11,12 @@ public class Course implements Cloneable {
     private Time startTime;
     private int duration;
 
-    public Course(String name, int credits, Set<Weekday> days, Time startTime, int duration) throws IllegalArgumentException {
+    public Course(String name, int credits, Set<Weekday> days, Time startTime, int duration){
         if (name != null && name != "" &&
                 name.contains(" ")&& days != null &&
                 credits >= 1 && credits <= 5 &&
                 credits != 0 && days.size() != 0 &&
-                  startTime != null && startTime.getHour()>0 &&
+                startTime != null && startTime.getHour()>0 &&
                 duration != 0) {
 
             this.name = name;
@@ -33,11 +33,13 @@ public class Course implements Cloneable {
 
 
     public boolean conflictsWith(Course course) {
-        for (Weekday currentDay : days) {
-            if (course.days.contains(currentDay)) {
-                if (course.startTime.compareTo(this.startTime) < 0
-                        && course.getEndTime().compareTo(this.getEndTime()) < 0)
+        for (Weekday currentDay : course.days) {
+            if (this.days.contains(currentDay)) {
+                if(this.startTime.compareTo(course.getEndTime())< 0
+                        &&( course.startTime.compareTo(this.getEndTime())) < 0){
                     return true;
+                }
+
             }
         }
         return false;
@@ -111,7 +113,7 @@ public class Course implements Cloneable {
     @Override
     public int hashCode() {
         int a = 31;
-        a = 31 * this.startTime.getMinute() + this.startTime.getMinute();
+        a = 31 * this.startTime.getMinute() + this.startTime.getMinute() +37;
         a = 31 * this.credits + this.credits;
         a = 31 * this.duration + this.duration;
         a = 31 * this.days.size() + this.days.size();
