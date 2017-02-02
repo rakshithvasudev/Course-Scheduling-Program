@@ -2,6 +2,8 @@ import java.util.EnumSet;
 import java.util.Set;
 
 /**
+ * This class implements the clonable interface so
+ * the clone object can be overriden.
  * Created by Rakshith on 1/29/2017.
  */
 public class Course implements Cloneable {
@@ -33,13 +35,11 @@ public class Course implements Cloneable {
 
 
     public boolean conflictsWith(Course course) {
-        for (Weekday currentDay : course.days) {
+        for (Weekday currentDay: course.days) {
             if (this.days.contains(currentDay)) {
-                if(this.startTime.compareTo(course.getEndTime())< 0
-                        &&( course.startTime.compareTo(this.getEndTime())) < 0){
+                if(this.startTime.compareTo(course.getEndTime())< 0 && course.startTime.compareTo(this.getEndTime()) < 0){
                     return true;
                 }
-
             }
         }
         return false;
@@ -77,7 +77,7 @@ public class Course implements Cloneable {
     }
 
     public Time getStartTime() {
-        return startTime;
+        return this.startTime;
     }
 
     public int getDuration() {
@@ -102,7 +102,9 @@ public class Course implements Cloneable {
     @Override
     public Course clone() {
         try {
-            return (Course) super.clone();
+
+            return (Course)super.clone();
+
 
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
