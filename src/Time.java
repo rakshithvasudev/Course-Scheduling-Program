@@ -69,23 +69,27 @@ public class Time implements Cloneable, Comparable<Time> {
 
     @Override
     public int compareTo(Time o) {
-        if (this.isPM() && !(o.isPM())) {
-            return 1;
-        } else if (this.isPM() == o.isPM()) {
-            if (this.hour == o.hour) {
-                if (this.minute == o.minute) {
-                    return 0;
-                }
-                //add another if minute comparision
-                if(this.minute>o.minute){
-                    return 1;
-                }
-            }
-            if(this.hour>o.hour){
-                return 1;
-            }
-        }
+        int thisMinute = 0;
+        int otherObjectMinute = 0;
 
+        if (o.isPM()) {
+            otherObjectMinute += 12*60;
+        }
+        otherObjectMinute += o.getMinute();
+        if (this.isPM()) {
+            thisMinute += 12*60;
+        }
+        if(this.hour != 12){
+            thisMinute += this.hour*60;
+        }
+        if(o.hour != 12){
+            otherObjectMinute += o.hour*60;
+        }
+        thisMinute += this.getMinute();
+        if (thisMinute > otherObjectMinute)
+            return 1;
+        if (thisMinute == otherObjectMinute)
+            return 0;
         return -1;
     }
 
@@ -117,7 +121,6 @@ public class Time implements Cloneable, Comparable<Time> {
         if(minutes<0){
             throw new IllegalArgumentException("No Negative Values Allowed");
         }
-
         boolean originalPM = this.isPM();
         int totalMinutes=0;
         if(this.isPM()) {
