@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d460dfe1-6108-42e8-9146-35ea397745df" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HW2/Course.class" afterPath="$PROJECT_DIR$/out/production/HW2/Course.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HW2/Weekday.class" afterPath="$PROJECT_DIR$/out/production/HW2/Weekday.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Course.java" afterPath="$PROJECT_DIR$/src/Course.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Time.java" afterPath="$PROJECT_DIR$/src/Time.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Weekday.java" afterPath="$PROJECT_DIR$/src/Weekday.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,11 +41,21 @@
       <file leaf-file-name="Course.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Course.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="787">
-              <caret line="110" column="5" lean-forward="true" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+            <state relative-caret-position="606">
+              <caret line="118" column="45" lean-forward="true" selection-start-line="118" selection-start-column="45" selection-end-line="118" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Time.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Time.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1972">
+              <caret line="59" column="16" lean-forward="false" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -49,21 +63,9 @@
       <file leaf-file-name="CourseInstructorTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tst/CourseInstructorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="68" column="62" lean-forward="false" selection-start-line="68" selection-start-column="62" selection-end-line="68" selection-end-column="62" />
+            <state relative-caret-position="375">
+              <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tst/CourseTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-822">
-              <caret line="27" column="52" lean-forward="false" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -82,6 +84,7 @@
     <findStrings>
       <find>hash</find>
       <find>contains</find>
+      <find>equals</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -100,13 +103,13 @@
         <option value="$PROJECT_DIR$/src/CourseTimeComparator.java" />
         <option value="$PROJECT_DIR$/src/CourseCreditComparator.java" />
         <option value="$PROJECT_DIR$/src/Schedule.java" />
-        <option value="$PROJECT_DIR$/src/Weekday.java" />
         <option value="$PROJECT_DIR$/tst/WeekdayTest.java" />
         <option value="$PROJECT_DIR$/tst/TimeInstructorTest.java" />
         <option value="$PROJECT_DIR$/tst/TimeTest.java" />
-        <option value="$PROJECT_DIR$/src/Time.java" />
         <option value="$PROJECT_DIR$/tst/CourseTest.java" />
         <option value="$PROJECT_DIR$/tst/CourseInstructorTest.java" />
+        <option value="$PROJECT_DIR$/src/Weekday.java" />
+        <option value="$PROJECT_DIR$/src/Time.java" />
         <option value="$PROJECT_DIR$/src/Course.java" />
       </list>
     </option>
@@ -185,8 +188,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -719,9 +722,9 @@
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.CourseInstructorTest" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.CourseInstructorTest.cloneTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CourseInstructorTest.startTimeTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.CourseInstructorTest.conflictTest2" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CourseTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CourseInstructorTest.conflictTest2" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CourseTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.CourseInstructorTest.startTimeTest" />
       </list>
     </recent_temporary>
   </component>
@@ -755,44 +758,47 @@
       <workItem from="1485965436099" duration="2705000" />
       <workItem from="1485984502312" duration="6860000" />
       <workItem from="1485996886692" duration="9478000" />
-      <workItem from="1486018222225" duration="3732000" />
+      <workItem from="1486018222225" duration="5323000" />
+      <workItem from="1486108956104" duration="350000" />
+      <workItem from="1486155730257" duration="12297000" />
+      <workItem from="1486173813893" duration="533000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CourseInstructorTest - 2017.02.01 at 23h 35m 01s.xml">
+    <history-entry file="CourseInstructorTest - 2017.02.03 at 16h 14m 49s.xml">
       <configuration name="CourseInstructorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CourseInstructorTest - 2017.02.01 at 23h 42m 21s.xml">
+    <history-entry file="CourseInstructorTest - 2017.02.03 at 16h 15m 11s.xml">
       <configuration name="CourseInstructorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CourseInstructorTest - 2017.02.01 at 23h 43m 43s.xml">
+    <history-entry file="CourseInstructorTest - 2017.02.03 at 16h 24m 53s.xml">
       <configuration name="CourseInstructorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CourseInstructorTest - 2017.02.01 at 23h 51m 49s.xml">
+    <history-entry file="CourseInstructorTest - 2017.02.03 at 18h 03m 47s.xml">
       <configuration name="CourseInstructorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CourseInstructorTest_cloneTest - 2017.02.01 at 23h 36m 48s.xml">
+    <history-entry file="CourseInstructorTest - 2017.02.03 at 18h 10m 13s.xml">
+      <configuration name="CourseInstructorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CourseInstructorTest_cloneTest - 2017.02.03 at 16h 16m 11s.xml">
       <configuration name="CourseInstructorTest.cloneTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CourseInstructorTest_conflictTest2 - 2017.02.01 at 23h 32m 45s.xml">
-      <configuration name="CourseInstructorTest.conflictTest2" configurationId="JUnit" />
+    <history-entry file="CourseInstructorTest_cloneTest - 2017.02.03 at 16h 16m 15s.xml">
+      <configuration name="CourseInstructorTest.cloneTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CourseInstructorTest_startTimeTest - 2017.02.01 at 23h 35m 07s.xml">
-      <configuration name="CourseInstructorTest.startTimeTest" configurationId="JUnit" />
+    <history-entry file="CourseInstructorTest_cloneTest - 2017.02.03 at 16h 25m 36s.xml">
+      <configuration name="CourseInstructorTest.cloneTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CourseInstructorTest_startTimeTest - 2017.02.01 at 23h 36m 01s.xml">
-      <configuration name="CourseInstructorTest.startTimeTest" configurationId="JUnit" />
+    <history-entry file="CourseInstructorTest_cloneTest - 2017.02.03 at 16h 27m 15s.xml">
+      <configuration name="CourseInstructorTest.cloneTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CourseInstructorTest_startTimeTest - 2017.02.01 at 23h 36m 18s.xml">
-      <configuration name="CourseInstructorTest.startTimeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CourseTest - 2017.02.01 at 23h 29m 21s.xml">
-      <configuration name="CourseTest" configurationId="JUnit" />
+    <history-entry file="CourseInstructorTest_cloneTest - 2017.02.03 at 18h 03m 42s.xml">
+      <configuration name="CourseInstructorTest.cloneTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111325000" />
+    <option name="totallyTimeSpent" value="126096000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -816,20 +822,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39988938" sideWeight="0.5010707" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294956" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3294956" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31316915" sideWeight="0.4967742" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32441112" sideWeight="0.4967742" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2805139" sideWeight="0.5032258" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967105" sideWeight="0.49892932" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2805139" sideWeight="0.5032258" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -847,7 +853,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="64" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tst/CourseInstructorTest.java</url>
+          <line>148</line>
+          <properties />
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="101" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -856,17 +870,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/SchedulerGui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="51" column="16" lean-forward="false" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
-          <folding>
-            <element signature="e#9722#9723#0" expanded="false" />
-            <element signature="e#9789#9790#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ScheduleTableModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1144,21 +1147,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="53" column="173" lean-forward="false" selection-start-line="53" selection-start-column="173" selection-end-line="53" selection-end-column="173" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/Collections.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="591">
           <caret line="139" column="57" lean-forward="false" selection-start-line="139" selection-start-column="57" selection-end-line="139" selection-end-column="57" />
-          <folding>
-            <element signature="e#5644#5645#0" expanded="false" />
-            <element signature="e#5675#5676#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1174,14 +1166,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Weekday.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1060">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1205,29 +1189,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tst/CourseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="53" column="173" lean-forward="false" selection-start-line="53" selection-start-column="173" selection-end-line="53" selection-end-column="173" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/Set.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="118" column="12" lean-forward="false" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="591">
+          <caret line="84" column="17" lean-forward="false" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/Assert.class">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/HashSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Time.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2737">
-          <caret line="96" column="19" lean-forward="false" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="591">
+          <caret line="142" column="11" lean-forward="false" selection-start-line="142" selection-start-column="11" selection-end-line="142" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1235,32 +1224,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="9" column="62" lean-forward="false" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Weekday.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="43" column="43" lean-forward="true" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Time.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1972">
+          <caret line="59" column="16" lean-forward="false" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/Assert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tst/CourseInstructorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="68" column="62" lean-forward="false" selection-start-line="68" selection-start-column="62" selection-end-line="68" selection-end-column="62" />
+        <state relative-caret-position="375">
+          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tst/CourseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-822">
-          <caret line="27" column="52" lean-forward="false" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Course.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="787">
-          <caret line="110" column="5" lean-forward="true" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+        <state relative-caret-position="606">
+          <caret line="118" column="45" lean-forward="true" selection-start-line="118" selection-start-column="45" selection-end-line="118" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

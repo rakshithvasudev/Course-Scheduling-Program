@@ -1,11 +1,12 @@
-import java.util.EnumSet;
-import java.util.Set;
+import javax.swing.text.html.HTMLDocument;
+import java.util.*;
 
 /**
  * This class implements the clonable interface so
  * the clone object can be overriden.
  * Created by Rakshith on 1/29/2017.
  */
+
 public class Course implements Cloneable {
     private String name;
     private int credits;
@@ -14,7 +15,7 @@ public class Course implements Cloneable {
     private int duration;
 
     public Course(String name, int credits, Set<Weekday> days, Time startTime, int duration){
-        if (name != null && name != "" &&
+        if (name != null && !name.equals("") &&
                 name.contains(" ")&& days != null &&
                 credits >= 1 && credits <= 5 &&
                 credits != 0 && days.size() != 0 &&
@@ -28,7 +29,8 @@ public class Course implements Cloneable {
             this.duration = duration;
 
         } else {
-            throw new IllegalArgumentException("This is an Illegal Argument for Course Constructor!");
+            throw new IllegalArgumentException("This is an Illegal Argument" +
+                    " for Course Constructor!");
         }
 
     }
@@ -37,7 +39,14 @@ public class Course implements Cloneable {
     public boolean conflictsWith(Course course) {
         for (Weekday currentDay: course.days) {
             if (this.days.contains(currentDay)) {
-                if(this.startTime.compareTo(course.getEndTime())< 0 && course.startTime.compareTo(this.getEndTime()) < 0){
+                if(this.startTime.compareTo(course.getEndTime())< 0 &&
+                        course.startTime.compareTo(this.getEndTime())< 0){
+                    return true;
+                }else if(this.startTime.compareTo(course.startTime)==0){
+                    return true;
+                }else if(this.getEndTime().compareTo(course.startTime)==0){
+                    return true;
+                }else if(this.getEndTime().compareTo(course.getStartTime())>0 || this.getStartTime().compareTo(course.getEndTime())==0){
                     return true;
                 }
             }
@@ -47,9 +56,9 @@ public class Course implements Cloneable {
 
 
     public boolean contains(Weekday day, Time time) {
-        return (this.days.equals(EnumSet.of(day)) && this.startTime.equals(time));
-
+        return (this.startTime.compareTo(time) <= 0 && this.getEndTime().compareTo(time) > 0 && this.days.contains(day));
     }
+
 
 
     @Override
@@ -65,6 +74,7 @@ public class Course implements Cloneable {
         }
 
         return false;
+
 
     }
 
@@ -102,8 +112,20 @@ public class Course implements Cloneable {
     @Override
     public Course clone() {
         try {
-            return (Course)super.clone();
+            Course courseClone = (Course)super.clone();
+            Time timeObject = new Time(startTime.getHour(),startTime.getMinute(),startTime.isPM());
 
+
+            courseClone.days=new HashSet<>();
+            courseClone.startTime=timeObject;
+
+
+            for (Weekday currentDay: this.days) {
+                courseClone.days.add(currentDay);
+            }
+
+            courseClone.startTime=timeObject;
+            return courseClone;
         } catch (CloneNotSupportedException e) {
             return null;
         }

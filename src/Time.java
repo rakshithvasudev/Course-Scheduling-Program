@@ -59,7 +59,7 @@ public class Time implements Cloneable, Comparable<Time> {
     @Override
     public Time clone() {
         try {
-            return (Time) super.clone();
+            return (Time)super.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }

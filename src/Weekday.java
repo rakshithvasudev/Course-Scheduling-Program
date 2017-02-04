@@ -60,6 +60,8 @@ public enum Weekday {
 
     }
 
+
+
     /**
      * Return the title case for Weekday Enum
       * @return
@@ -80,4 +82,6 @@ public enum Weekday {
         }
         return String.valueOf(titleCase);
     }
+
+
 }
