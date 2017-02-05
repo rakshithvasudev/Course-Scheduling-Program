@@ -93,8 +93,7 @@ public class Course implements Cloneable {
     /**
      * Returns if the Course objects are the same
      * in value. Non primitive data types are
-     * making use of equals method from the object class.
-     *
+     * making use of equals() method from the object class.
      * @param obj
      * @return
      */
@@ -113,11 +112,11 @@ public class Course implements Cloneable {
 
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public int getCredits() {
-        return credits;
+        return this.credits;
     }
 
     public Time getStartTime() {

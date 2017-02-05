@@ -7,7 +7,8 @@ public class CourseNameComparator implements Comparator<Course> {
 
     @Override
     public int compare(Course o1, Course o2) {
-        return 0;
+        return o1.getName().compareTo(o2.getName());
     }
+
 
 }
