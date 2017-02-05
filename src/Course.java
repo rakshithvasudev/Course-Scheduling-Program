@@ -17,13 +17,13 @@ public class Course implements Cloneable {
 
     /**
      * Clone the startTime variable because it'd get
-     * shifted later in the program.
+     * shift() 'ed later in the program.
      *
-     * @param name       : Check for any improper formats in name.
-     * @param credits    : Accept only values from 1 to 5.
-     * @param days       : Set of days for the course.
-     * @param startTime: start Time for the courses.
-     * @param duration:  Length of the Class.
+     * @param name      : Check for any improper formats in name.
+     * @param credits   : Accept only values from 1 to 5.
+     * @param days      : Set of days for the course from the Weekday Enum.
+     * @param startTime : start Time for the courses.
+     * @param duration  :  Length of the Class.
      */
     public Course(String name, int credits, Set<Weekday> days, Time startTime, int duration) {
         if (name != null && !name.equals("") &&
@@ -94,6 +94,7 @@ public class Course implements Cloneable {
      * Returns if the Course objects are the same
      * in value. Non primitive data types are
      * making use of equals() method from the object class.
+     *
      * @param obj
      * @return
      */
@@ -119,6 +120,11 @@ public class Course implements Cloneable {
         return this.credits;
     }
 
+    /**
+     * Return a cloned copy, because a private object shouldn't be allowed free.
+     *
+     * @return
+     */
     public Time getStartTime() {
         return this.startTime.clone();
     }
