@@ -25,7 +25,7 @@ public class Course implements Cloneable {
             this.name = name;
             this.credits = credits;
             this.days = days;
-            this.startTime = startTime;
+            this.startTime = startTime.clone();
             this.duration = duration;
 
         } else {
@@ -37,26 +37,31 @@ public class Course implements Cloneable {
 
 
     public boolean conflictsWith(Course course) {
-        for (Weekday currentDay: course.days) {
+        for (Weekday currentDay : course.days) {
             if (this.days.contains(currentDay)) {
-                if(this.startTime.compareTo(course.getEndTime())< 0 &&
-                        course.startTime.compareTo(this.getEndTime())< 0){
-                    return true;
-                }else if(this.startTime.compareTo(course.startTime)==0){
-                    return true;
-                }else if(this.getEndTime().compareTo(course.startTime)==0){
-                    return true;
-                }else if(this.getEndTime().compareTo(course.getStartTime())>0 || this.getStartTime().compareTo(course.getEndTime())==0){
+                if (this.startTime.compareTo(course.startTime)<= 0 ||
+                        course.getEndTime().compareTo(this.getEndTime())<=0) {
+                    if(this.startTime.compareTo(course.getEndTime())==0){
+                        return false;
+                    }
+                    else if(this.startTime.compareTo(course.getEndTime())==0){
+                        return false;
+                    }
+                    if(course.getEndTime().compareTo(this.startTime)<0){
+                        return false;
+                    }
                     return true;
                 }
             }
+
         }
         return false;
     }
 
 
     public boolean contains(Weekday day, Time time) {
-        return (this.startTime.compareTo(time) <= 0 && this.getEndTime().compareTo(time) > 0 && this.days.contains(day));
+        return (this.startTime.compareTo(time) <= 0 &&
+                this.getEndTime().compareTo(time) > 0 && this.days.contains(day));
     }
 
 
@@ -66,10 +71,10 @@ public class Course implements Cloneable {
 
         if (obj != null && obj.getClass() == Course.class) {
             Course course = (Course) obj;
-            return (this.name.compareTo(course.name) == 0 &&
+            return (this.name.equals(course.name)&&
                     this.credits == course.credits &&
-                    this.days == course.days &&
-                    this.startTime == course.startTime &&
+                    this.days.equals(course.days) &&
+                    this.startTime.equals(course.startTime) &&
                     this.duration == course.duration);
         }
 
@@ -112,20 +117,15 @@ public class Course implements Cloneable {
     @Override
     public Course clone() {
         try {
-            Course courseClone = (Course)super.clone();
-            Time timeObject = new Time(startTime.getHour(),startTime.getMinute(),startTime.isPM());
-
-
-            courseClone.days=new HashSet<>();
-            courseClone.startTime=timeObject;
-
-
+            Course course= (Course) super.clone();
+            Set<Weekday> days ;
+            Time startTimeCloned=this.startTime.clone();
+            Time t1 = new Time(startTimeCloned.getHour(),startTimeCloned.getMinute(),startTimeCloned.isPM());
+            days=new LinkedHashSet<>();
             for (Weekday currentDay: this.days) {
-                courseClone.days.add(currentDay);
+                days.add(currentDay);
             }
-
-            courseClone.startTime=timeObject;
-            return courseClone;
+            return new Course(course.name,course.credits,days,t1,course.duration);
         } catch (CloneNotSupportedException e) {
             return null;
         }
