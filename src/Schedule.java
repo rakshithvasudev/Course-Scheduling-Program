@@ -11,81 +11,139 @@ public class Schedule {
     private Set<Course> classSchedules;
     private int totalCredits;
 
+
+    /**
+     * Initialize the classSchedules to nothing.
+     */
     public Schedule() {
         this.classSchedules = new LinkedHashSet<>();
-        this.totalCredits=0;
+        this.totalCredits = 0;
     }
 
-    public void add(Course course) throws RuntimeException{
+    /**
+     * In the event that there is a conflict during
+     * addition of the course, a RuntimeException is thrown.
+     * uses for each loop to check within the list of
+     * elements of the classSchedules Hash set.
+     *
+     * @param course : Added
+     * @throws RuntimeException : when there's a conflict.
+     */
+    public void add(Course course) throws RuntimeException {
 
-        for (Course currentCourse: this.classSchedules) {
+        for (Course currentCourse : this.classSchedules) {
             if (currentCourse.conflictsWith(course)) {
-                    throw new ScheduleConflictException(currentCourse, course);
+                throw new ScheduleConflictException(currentCourse, course);
             }
         }
-
+        //Add credits upon the addition of
+        // the course to the schedule.
         this.classSchedules.add(course);
-        this.totalCredits+= course.getCredits();
+        this.totalCredits += course.getCredits();
     }
 
+    /**
+     * Creates a copy of the schedule inclusive of its primitive
+     * elements such as totalCredits.
+     *
+     * @return
+     */
     @Override
-    public Schedule clone(){
+    public Schedule clone() {
         try {
-            Schedule schedule=(Schedule)super.clone();
+            Schedule schedule = (Schedule) super.clone();
             schedule.classSchedules = new HashSet<Course>();
-            for (Course currentCourse: classSchedules) {
+            for (Course currentCourse : classSchedules) {
                 schedule.classSchedules.add(currentCourse);
             }
             return schedule;
-        }catch (CloneNotSupportedException e){
+        } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
         return null;
     }
 
 
-    public Course getCourse( Weekday  day, Time time){
-        for (Course checkForCourse: this.classSchedules) {
-            if(checkForCourse.contains(day,time)){
-               return checkForCourse;
+    /**
+     * Checks to see if there is a course that runs on the given
+     * the day and time.
+     *
+     * @param day
+     * @param time
+     * @return
+     */
+    public Course getCourse(Weekday day, Time time) {
+        for (Course checkForCourse : this.classSchedules) {
+            if (checkForCourse.contains(day, time)) {
+                return checkForCourse;
             }
         }
         return null;
     }
 
-    public void save(PrintStream printStream, Comparator<Course> comparator){
+    /**
+     * Uses comparator and a printStream element.
+     * Implements a temporary arrayList to copy the
+     * elements to sort from the comparator.
+     *
+     * @param printStream : Allows to write to the txt file.
+     * @param comparator  : Supports for the sorting the list.
+     */
+    public void save(PrintStream printStream, Comparator<Course> comparator) {
 
         List<Course> classSchedulesList = new ArrayList<>(classSchedules);
         classSchedulesList.sort(comparator);
 
-        for (Course currentCourse: classSchedulesList) {
+        for (Course currentCourse : classSchedulesList) {
             printStream.append(currentCourse.toString());
             printStream.format("%n");
         }
 
+        //close the writing stream.
+        printStream.close();
+
 
     }
 
+    /**
+     * Returns the totalCredits from the Hashset.
+     *
+     * @return
+     */
 
-    public int totalCredits(){
-        int totalCredits=0;
-        for (Course currentCourse: classSchedules) {
-            totalCredits+= currentCourse.getCredits();
+    public int totalCredits() {
+        int totalCredits = 0;
+        for (Course currentCourse : classSchedules) {
+            totalCredits += currentCourse.getCredits();
         }
         return totalCredits;
     }
 
-    public void remove(Weekday day,Time time){
-        for (Course currentCourse: this.classSchedules) {
-            if(currentCourse.contains(day, time)){
+
+    /**
+     * Removes the element from the Set.
+     * Updates the credits before the removing of the element.
+     *
+     * @param day   : if the course element contains the same day,
+     * @param time: and time as the element in the classSchedule,
+     *              then that element is removed.
+     */
+    public void remove(Weekday day, Time time) {
+        for (Course currentCourse : this.classSchedules) {
+            if (currentCourse.contains(day, time)) {
                 int credits = currentCourse.getCredits();
-                   totalCredits-=credits;
-                    classSchedules.remove(currentCourse);
-                    break;
+                totalCredits -= credits;
+                classSchedules.remove(currentCourse);
+                break;
             }
         }
     }
 
+    /**
+     * Prints the list of class Schedules.
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return this.classSchedules.toString();
