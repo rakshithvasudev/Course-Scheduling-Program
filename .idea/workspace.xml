@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d460dfe1-6108-42e8-9146-35ea397745df" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HW2/Course.class" afterPath="$PROJECT_DIR$/out/production/HW2/Course.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HW2/Schedule.class" afterPath="$PROJECT_DIR$/out/production/HW2/Schedule.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/HW2/CourseTest.class" afterPath="$PROJECT_DIR$/out/test/HW2/CourseTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HW2/Schedule.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/courses.txt" afterPath="$PROJECT_DIR$/courses.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Course.java" afterPath="$PROJECT_DIR$/src/Course.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CourseNameComparator.java" afterPath="$PROJECT_DIR$/src/CourseNameComparator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CourseCreditComparator.java" afterPath="$PROJECT_DIR$/src/CourseCreditComparator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CourseTimeComparator.java" afterPath="$PROJECT_DIR$/src/CourseTimeComparator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Schedule.java" afterPath="$PROJECT_DIR$/src/Schedule.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ScheduleConflictException.java" afterPath="$PROJECT_DIR$/src/ScheduleConflictException.java" />
@@ -42,11 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Course.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Course.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="114" column="20" lean-forward="false" selection-start-line="114" selection-start-column="20" selection-end-line="114" selection-end-column="20" />
+            <state relative-caret-position="579">
+              <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,14 +52,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Schedule.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Schedule.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1184">
-              <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+            <state relative-caret-position="1360">
+              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
-                <element signature="e#2189#2190#0" expanded="true" />
-                <element signature="e#2242#2243#0" expanded="true" />
+                <element signature="e#2217#2218#0" expanded="true" />
+                <element signature="e#2270#2271#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/src/CourseNameComparator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+              <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
               <folding>
                 <element signature="e#201#202#0" expanded="true" />
                 <element signature="e#260#261#0" expanded="true" />
@@ -83,8 +81,18 @@
       <file leaf-file-name="CourseTimeComparator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CourseTimeComparator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="14" column="51" lean-forward="true" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseCreditComparator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CourseCreditComparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="10" column="49" lean-forward="false" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -119,7 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/CourseCreditComparator.java" />
         <option value="$PROJECT_DIR$/tst/WeekdayTest.java" />
         <option value="$PROJECT_DIR$/tst/TimeInstructorTest.java" />
         <option value="$PROJECT_DIR$/tst/TimeTest.java" />
@@ -127,12 +134,13 @@
         <option value="$PROJECT_DIR$/src/Time.java" />
         <option value="$PROJECT_DIR$/tst/CourseInstructorTest.java" />
         <option value="$PROJECT_DIR$/tst/CourseTest.java" />
-        <option value="$PROJECT_DIR$/src/Course.java" />
         <option value="$PROJECT_DIR$/courses.txt" />
-        <option value="$PROJECT_DIR$/src/ScheduleConflictException.java" />
         <option value="$PROJECT_DIR$/src/CourseNameComparator.java" />
-        <option value="$PROJECT_DIR$/src/CourseTimeComparator.java" />
         <option value="$PROJECT_DIR$/src/Schedule.java" />
+        <option value="$PROJECT_DIR$/src/ScheduleConflictException.java" />
+        <option value="$PROJECT_DIR$/src/Course.java" />
+        <option value="$PROJECT_DIR$/src/CourseCreditComparator.java" />
+        <option value="$PROJECT_DIR$/src/CourseTimeComparator.java" />
       </list>
     </option>
   </component>
@@ -224,6 +232,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../Lesson" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="SearchEverywhereHistoryKey" value="contains&#9;PSI&#9;JAVA://Course#contains" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -232,7 +241,7 @@
       <recent name="C:\Users\Rakshith\Desktop\CBU hws\CSC526\HW2\HW2 Solutions\Program\HW2\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ScheduleTestSuit">
+  <component name="RunManager" selected="Application.SchedulerMain">
     <configuration default="false" name="CourseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="HW2" />
@@ -737,9 +746,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ScheduleTestSuit" />
-        <item index="1" class="java.lang.String" itemvalue="Application.SchedulerMain" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CourseInstructorTest" />
+        <item index="0" class="java.lang.String" itemvalue="Application.SchedulerMain" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CourseInstructorTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ScheduleTestSuit" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.CourseTest" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.CourseTest.getEndTimeTest" />
       </list>
@@ -747,6 +756,9 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -785,7 +797,7 @@
       <workItem from="1486231385444" duration="5552000" />
       <workItem from="1486237786681" duration="826000" />
       <workItem from="1486244819463" duration="9043000" />
-      <workItem from="1486254742362" duration="10657000" />
+      <workItem from="1486254742362" duration="19355000" />
     </task>
     <servers />
   </component>
@@ -793,14 +805,8 @@
     <history-entry file="CourseInstructorTest - 2017.02.04 at 17h 17m 33s.xml">
       <configuration name="CourseInstructorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CourseTest - 2017.02.04 at 16h 28m 51s.xml">
-      <configuration name="CourseTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CourseTest - 2017.02.04 at 16h 28m 59s.xml">
-      <configuration name="CourseTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CourseTest - 2017.02.04 at 16h 29m 15s.xml">
-      <configuration name="CourseTest" configurationId="JUnit" />
+    <history-entry file="CourseInstructorTest - 2017.02.04 at 22h 17m 12s.xml">
+      <configuration name="CourseInstructorTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="CourseTest_getEndTimeTest - 2017.02.04 at 16h 22m 55s.xml">
       <configuration name="CourseTest.getEndTimeTest" configurationId="JUnit" />
@@ -820,9 +826,15 @@
     <history-entry file="ScheduleTestSuit - 2017.02.04 at 17h 30m 42s.xml">
       <configuration name="ScheduleTestSuit" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ScheduleTestSuit - 2017.02.04 at 20h 11m 38s.xml">
+      <configuration name="ScheduleTestSuit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ScheduleTestSuit - 2017.02.04 at 20h 44m 49s.xml">
+      <configuration name="ScheduleTestSuit" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161796000" />
+    <option name="totallyTimeSpent" value="170494000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -877,7 +889,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="135" />
+      <option name="time" value="136" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -953,13 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="591">
           <caret line="124" column="44" lean-forward="false" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CourseCreditComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -1189,28 +1194,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="114" column="20" lean-forward="false" selection-start-line="114" selection-start-column="20" selection-end-line="114" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Time.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/courses.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1236,32 +1223,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ScheduleConflictException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="306">
+          <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/String.java">
+    <entry file="file://$PROJECT_DIR$/src/Schedule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1713">
-          <caret line="1152" column="15" lean-forward="false" selection-start-line="1152" selection-start-column="15" selection-end-line="1152" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CourseTimeComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="1360">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="e#2217#2218#0" expanded="true" />
+            <element signature="e#2270#2271#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CourseNameComparator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding>
             <element signature="e#201#202#0" expanded="true" />
             <element signature="e#260#261#0" expanded="true" />
@@ -1269,13 +1251,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Schedule.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1184">
-          <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+        <state relative-caret-position="1188">
+          <caret line="1164" column="30" lean-forward="false" selection-start-line="1164" selection-start-column="23" selection-end-line="1164" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CourseCreditComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="10" column="49" lean-forward="false" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CourseTimeComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="14" column="51" lean-forward="true" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/courses.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
           <folding>
-            <element signature="e#2189#2190#0" expanded="true" />
-            <element signature="e#2242#2243#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

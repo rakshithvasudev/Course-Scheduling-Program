@@ -120,7 +120,7 @@ public class Course implements Cloneable {
     }
 
     public Time getStartTime() {
-        return this.startTime;
+        return this.startTime.clone();
     }
 
     public int getDuration() {

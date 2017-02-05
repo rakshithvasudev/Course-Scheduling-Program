@@ -16,11 +16,11 @@ public class Schedule {
         this.totalCredits=0;
     }
 
-    public void add(Course course){
+    public void add(Course course) throws RuntimeException{
 
         for (Course currentCourse: this.classSchedules) {
             if (currentCourse.conflictsWith(course)) {
-                throw new ScheduleConflictException(currentCourse, course);
+                    throw new ScheduleConflictException(currentCourse, course);
             }
         }
 
