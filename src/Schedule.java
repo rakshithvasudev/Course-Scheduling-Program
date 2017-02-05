@@ -16,7 +16,7 @@ public class Schedule {
     }
 
     @Override
-    protected Schedule clone()  {
+    protected Schedule clone(){
 
         try {
             return(Schedule)super.clone();
