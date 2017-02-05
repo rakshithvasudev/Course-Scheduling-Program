@@ -34,12 +34,12 @@ public class CourseTest {
         Time t1 = new Time(2,30,true);
         Time t2 = new Time(2,45,true);
         Course course1 = new Course("Engg Research",3,
-                EnumSet.of(Weekday.MONDAY,Weekday.WEDNESDAY),t1,30);
-        Course course2 = new Course("Engg Core",3,
                 EnumSet.of(Weekday.MONDAY,Weekday.WEDNESDAY),t1,45);
+        Course course2 = new Course("Engg Core",3,
+                EnumSet.of(Weekday.MONDAY,Weekday.WEDNESDAY),t2,45);
 
 
-        Assert.assertEquals("Conflicts occurred",false,course1.conflictsWith(course2));
+        Assert.assertEquals("Conflicts occurred",true,course1.conflictsWith(course2));
 
     }
 
@@ -73,9 +73,8 @@ public class CourseTest {
     @Test
     public void getEndTimeTest(){
         Time t1 = new Time(3,40,true);
-        t1.shift(30);
         Course course1 = new Course("Arch Engg",3,EnumSet.of(Weekday.MONDAY,Weekday.WEDNESDAY),t1,30);
-        Assert.assertEquals("Equals not true",t1,course1.getEndTime());
+        Assert.assertEquals("Equals not true",new Time(4,10,true),course1.getEndTime());
     }
 
     @Test
@@ -86,10 +85,19 @@ public class CourseTest {
     }
 
     @Test
-    public void CourseShiftTest(){
+    public void courseShiftTest(){
         Time t1 = new Time(5,40,true);
         Course course1 = new Course("Arch Engg",3,EnumSet.of(Weekday.MONDAY,Weekday.WEDNESDAY),t1,20);
         Assert.assertEquals("Equals not true",new Time(6,00,true),course1.getEndTime());
+    }
+
+    @Test
+    public void cloneTest(){
+        Time t1 = new Time(2,40,true);
+        Course c1 = new Course("GDR 550",3,EnumSet.of(Weekday.MONDAY,Weekday.WEDNESDAY),t1,45);
+        Course c2 = c1.clone();
+        System.out.println(c1.equals(c2));
+        Assert.assertTrue("Clone test failed",c1!=c2);
     }
 
 

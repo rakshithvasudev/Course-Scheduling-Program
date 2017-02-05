@@ -14,6 +14,16 @@ public class Course implements Cloneable {
     private Time startTime;
     private int duration;
 
+
+    /**
+     * Clone the startTime variable because it'd get
+     * shifted later in the program.
+     * @param name : Check for any improper formats in name.
+     * @param credits : Accept only values from 1 to 5.
+     * @param days : Set of days for the course.
+     * @param startTime: start Time for the courses.
+     * @param duration: Length of the Class.
+     */
     public Course(String name, int credits, Set<Weekday> days, Time startTime, int duration){
         if (name != null && !name.equals("") &&
                 name.contains(" ")&& days != null &&
@@ -36,6 +46,13 @@ public class Course implements Cloneable {
     }
 
 
+    /**
+     * Checks to see if there is any potential
+     * Conflict between two courses.
+     * @param course : Accepts the Course.
+     * @returns the possiblity of conflict, boolean.
+     *
+     */
     public boolean conflictsWith(Course course) {
         for (Weekday currentDay : course.days) {
             if (this.days.contains(currentDay)) {
@@ -59,16 +76,28 @@ public class Course implements Cloneable {
     }
 
 
+    /**
+     * Checks the presence of a course with the given
+     * day and time.
+     * @param day
+     * @param time
+     * @return
+     */
     public boolean contains(Weekday day, Time time) {
         return (this.startTime.compareTo(time) <= 0 &&
                 this.getEndTime().compareTo(time) > 0 && this.days.contains(day));
     }
 
 
-
+    /**
+     * Returns if the Course objects are the same
+     * in value. Non primitive data types are
+     * making use of equals method from the object class.
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
-
         if (obj != null && obj.getClass() == Course.class) {
             Course course = (Course) obj;
             return (this.name.equals(course.name)&&
@@ -77,11 +106,10 @@ public class Course implements Cloneable {
                     this.startTime.equals(course.startTime) &&
                     this.duration == course.duration);
         }
-
         return false;
-
-
     }
+
+
 
     public String getName() {
         return name;
@@ -91,7 +119,7 @@ public class Course implements Cloneable {
         return credits;
     }
 
-    public Time getStartTime() {
+    public Time getStartTime(){
         return this.startTime;
     }
 
@@ -114,16 +142,20 @@ public class Course implements Cloneable {
         return this.name + "," + this.credits + "," + sb + "," + this.startTime + "," + this.duration;
     }
 
+
+    /**
+     * Performs a deep copy of the Course object.
+     * @return
+     */
     @Override
     public Course clone() {
         try {
             Course course= (Course) super.clone();
-            Set<Weekday> days ;
+            course.days = new LinkedHashSet<>() ;
             Time startTimeCloned=this.startTime.clone();
             Time t1 = new Time(startTimeCloned.getHour(),startTimeCloned.getMinute(),startTimeCloned.isPM());
-            days=new LinkedHashSet<>();
             for (Weekday currentDay: this.days) {
-                days.add(currentDay);
+                course.days.add(currentDay);
             }
             return new Course(course.name,course.credits,days,t1,course.duration);
         } catch (CloneNotSupportedException e) {
