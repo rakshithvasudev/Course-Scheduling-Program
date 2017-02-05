@@ -55,7 +55,10 @@ public class Schedule {
 
     public void save(PrintStream printStream, Comparator<Course> comparator){
 
-        for (Course currentCourse: this.classSchedules) {
+        List<Course> classSchedulesList = new ArrayList<>(classSchedules);
+        classSchedulesList.sort(comparator);
+
+        for (Course currentCourse: classSchedulesList) {
             printStream.append(currentCourse.toString());
             printStream.format("%n");
         }
