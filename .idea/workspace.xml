@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d460dfe1-6108-42e8-9146-35ea397745df" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HW2/Schedule.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/courses.txt" afterPath="$PROJECT_DIR$/courses.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Course.java" afterPath="$PROJECT_DIR$/src/Course.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CourseCreditComparator.java" afterPath="$PROJECT_DIR$/src/CourseCreditComparator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CourseTimeComparator.java" afterPath="$PROJECT_DIR$/src/CourseTimeComparator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Schedule.java" afterPath="$PROJECT_DIR$/src/Schedule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ScheduleConflictException.java" afterPath="$PROJECT_DIR$/src/ScheduleConflictException.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,10 +35,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="Course.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Course.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="579">
+            <state relative-caret-position="1224">
               <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -52,15 +47,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Schedule.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="courses.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/courses.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Schedule.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1360">
-              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state relative-caret-position="606">
+              <caret line="59" column="37" lean-forward="false" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
               <folding>
-                <element signature="e#2217#2218#0" expanded="true" />
-                <element signature="e#2270#2271#0" expanded="true" />
+                <element signature="e#2382#2383#0" expanded="true" />
+                <element signature="e#2435#2436#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SchedulerGui.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SchedulerGui.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="591">
+              <caret line="270" column="21" lean-forward="false" selection-start-line="270" selection-start-column="21" selection-end-line="270" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -134,13 +149,13 @@
         <option value="$PROJECT_DIR$/src/Time.java" />
         <option value="$PROJECT_DIR$/tst/CourseInstructorTest.java" />
         <option value="$PROJECT_DIR$/tst/CourseTest.java" />
-        <option value="$PROJECT_DIR$/courses.txt" />
         <option value="$PROJECT_DIR$/src/CourseNameComparator.java" />
-        <option value="$PROJECT_DIR$/src/Schedule.java" />
         <option value="$PROJECT_DIR$/src/ScheduleConflictException.java" />
         <option value="$PROJECT_DIR$/src/Course.java" />
         <option value="$PROJECT_DIR$/src/CourseCreditComparator.java" />
         <option value="$PROJECT_DIR$/src/CourseTimeComparator.java" />
+        <option value="$PROJECT_DIR$/src/Schedule.java" />
+        <option value="$PROJECT_DIR$/courses.txt" />
       </list>
     </option>
   </component>
@@ -797,7 +812,7 @@
       <workItem from="1486231385444" duration="5552000" />
       <workItem from="1486237786681" duration="826000" />
       <workItem from="1486244819463" duration="9043000" />
-      <workItem from="1486254742362" duration="19355000" />
+      <workItem from="1486254742362" duration="20868000" />
     </task>
     <servers />
   </component>
@@ -834,7 +849,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170494000" />
+    <option name="totallyTimeSpent" value="172007000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -898,21 +913,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tst/TimeInstructorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ScheduleIO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1870">
@@ -982,20 +982,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerGui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="984">
-          <caret line="175" column="66" lean-forward="false" selection-start-line="175" selection-start-column="66" selection-end-line="175" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="211" column="28" lean-forward="false" selection-start-line="211" selection-start-column="28" selection-end-line="211" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1229,17 +1215,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Schedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding>
-            <element signature="e#2217#2218#0" expanded="true" />
-            <element signature="e#2270#2271#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CourseNameComparator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1275,20 +1250,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/Appendable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1061">
+          <caret line="106" column="15" lean-forward="false" selection-start-line="106" selection-start-column="15" selection-end-line="106" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SchedulerGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="270" column="21" lean-forward="false" selection-start-line="270" selection-start-column="21" selection-end-line="270" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
+          <folding>
+            <element signature="e#10065#10066#0" expanded="true" />
+            <element signature="e#10148#10149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/courses.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Course.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
+        <state relative-caret-position="1224">
           <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/io/PrintStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="721">
+          <caret line="1104" column="20" lean-forward="true" selection-start-line="1104" selection-start-column="20" selection-end-line="1104" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Schedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="606">
+          <caret line="59" column="37" lean-forward="false" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
+          <folding>
+            <element signature="e#2382#2383#0" expanded="true" />
+            <element signature="e#2435#2436#0" expanded="true" />
           </folding>
         </state>
       </provider>

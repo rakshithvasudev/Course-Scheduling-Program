@@ -55,6 +55,11 @@ public class Schedule {
 
     public void save(PrintStream printStream, Comparator<Course> comparator){
 
+        for (Course currentCourse: this.classSchedules) {
+            printStream.append(currentCourse.toString());
+            printStream.format("%n");
+        }
+
 
     }
 
