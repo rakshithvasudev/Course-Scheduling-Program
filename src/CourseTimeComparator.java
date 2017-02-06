@@ -16,6 +16,8 @@ public class CourseTimeComparator implements Comparator<Course> {
 
         //As long as there is no tie in startTime, returns
         //an integer based on their comparision.
+        //Difference can't be used because, StartTimes are
+        //not primitive integers.
       if(!o1.getStartTime().equals(o2.getStartTime())){
           return o1.getStartTime().compareTo(o2.getStartTime());
       }
@@ -29,6 +31,8 @@ public class CourseTimeComparator implements Comparator<Course> {
 
         //Tie breaking process now,
         // returns an integer based on their compared values.
+        // Returns 0 only if the objects are truly common, even after
+        // passing the other 2 comparators.
       return o1.getName().compareTo(o2.getName());
     }
 }

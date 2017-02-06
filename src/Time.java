@@ -100,6 +100,14 @@ public class Time implements Cloneable, Comparable<Time> {
         return -1;
     }
 
+//    private int toMinutes(){
+//        return -1;
+//    }
+//
+//    public int compareTo2(Time o){
+//        return toMinutes() - o.toMinutes();
+//    }
+
     /**
      * A Non Primitive must be overridden and checked for state matches.
      *

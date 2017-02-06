@@ -151,6 +151,13 @@ public class Schedule {
         return this.classSchedules.toString();
     }
 
+    /**
+     * Only for testing purpose
+     * @return
+     */
+    public Collection<Course> getAllCourses(){
+        return new LinkedHashSet<>(classSchedules);
+    }
 }
 
 

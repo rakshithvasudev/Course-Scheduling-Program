@@ -13,6 +13,7 @@ import org.junit.runners.Suite;
         //TimeTest.class,
         WeekdayInstructorTest.class,
         //WeekdayTest.class
+        ScheduleInstructorTest.class
 })
 public class ScheduleTestSuit {
 }
