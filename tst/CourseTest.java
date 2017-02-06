@@ -100,5 +100,24 @@ public class CourseTest {
         Assert.assertTrue("Clone test failed",c1!=c2);
     }
 
+    @Test
+    public void containsTest(){
+        Time t1 = new Time(2,40,true);
+        Course c1 = new Course("GDR 550",3,EnumSet.of(Weekday.MONDAY,Weekday.WEDNESDAY),t1,45);
+        Schedule schedule = new Schedule();
+        schedule.add(c1);
+        Assert.assertTrue("Not present", schedule.getCourse(Weekday.MONDAY,t1).equals(c1));
+    }
+
+
+    @Test
+    public void containsNegativeTest(){
+        Time t1 = new Time(3,40,true);
+        Course c1 = new Course("ESL 550",3,EnumSet.of(Weekday.MONDAY,Weekday.WEDNESDAY),t1,45);
+        Schedule schedule = new Schedule();
+        schedule.add(c1);
+        Assert.assertFalse("Not present", !schedule.getCourse(Weekday.MONDAY,t1).equals(c1));
+
+    }
 
 }

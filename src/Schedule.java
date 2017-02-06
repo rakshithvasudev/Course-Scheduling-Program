@@ -53,7 +53,7 @@ public class Schedule {
         try {
             Schedule schedule = (Schedule) super.clone();
             schedule.classSchedules = new HashSet<Course>();
-            for (Course currentCourse : classSchedules) {
+            for (Course currentCourse : this.classSchedules) {
                 schedule.classSchedules.add(currentCourse);
             }
             return schedule;
@@ -91,6 +91,8 @@ public class Schedule {
      */
     public void save(PrintStream printStream, Comparator<Course> comparator) {
 
+        //Copy hash set contents into class schedules ArrayList.
+        //The copied elements can be further sorted.
         List<Course> classSchedulesList = new ArrayList<>(classSchedules);
         classSchedulesList.sort(comparator);
 
@@ -148,6 +150,7 @@ public class Schedule {
     public String toString() {
         return this.classSchedules.toString();
     }
+
 }
 
 

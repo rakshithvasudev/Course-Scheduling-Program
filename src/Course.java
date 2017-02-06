@@ -2,8 +2,8 @@ import javax.swing.text.html.HTMLDocument;
 import java.util.*;
 
 /**
- * This class implements the clonable interface so
- * the clone object can be overriden.
+ * This class implements the cloneable interface so
+ * the clone object can be overridden.
  * Created by Rakshith on 1/29/2017.
  */
 
@@ -52,21 +52,31 @@ public class Course implements Cloneable {
      * Conflict between two courses.
      *
      * @param course : Accepts the Course.
-     * @returns the possiblity of conflict, boolean.
+     * @returns the possibility of conflict, boolean.
      */
     public boolean conflictsWith(Course course) {
+        boolean containsCourseDuringStartTime, containsCourseDuringEndTime;
+        Time courseStartTime = course.startTime;
+        Time courseEndTime = course.getEndTime();
         for (Weekday currentDay : course.days) {
             if (this.days.contains(currentDay)) {
-                if (this.startTime.compareTo(course.startTime) <= 0 ||
-                        course.getEndTime().compareTo(this.getEndTime()) <= 0) {
-                    if (this.startTime.compareTo(course.getEndTime()) == 0) {
-                        return false;
-                    } else if (this.startTime.compareTo(course.getEndTime()) == 0) {
-                        return false;
-                    }
-                    if (course.getEndTime().compareTo(this.startTime) < 0) {
-                        return false;
-                    }
+
+                //Returns false if the start times and end time are not the same and
+                //if there is an intersection point for both the times.
+                // For ex: Refer line 160 in CourseInstructorTest.java
+                // file .
+                if (this.startTime.compareTo(courseStartTime) != 0 &&
+                        this.getEndTime().compareTo(courseEndTime) != 0 &&
+                        (this.getEndTime().compareTo(courseStartTime) == 0 ||
+                                this.startTime.compareTo(courseEndTime) == 0)) {
+                    return false;
+                }
+
+                // Return true if there is a course during the the Start time or End time.
+                //Uses a private helper method containsHelper(Day,Time)
+                // that is defined in this class.
+                if (containsHelper(currentDay, courseStartTime) ||
+                        containsHelper(currentDay, courseEndTime)) {
                     return true;
                 }
             }
@@ -89,6 +99,18 @@ public class Course implements Cloneable {
                 this.getEndTime().compareTo(time) > 0 && this.days.contains(day));
     }
 
+
+    /**
+     * A private helper method used for the  conflictsWith() method.
+     *
+     * @param day
+     * @param time
+     * @returns true if there is a course that matches the day and time.
+     */
+    private boolean containsHelper(Weekday day, Time time) {
+        return (this.startTime.compareTo(time) <= 0 &&
+                this.getEndTime().compareTo(time) >= 0 && this.days.contains(day));
+    }
 
     /**
      * Returns if the Course objects are the same
@@ -121,7 +143,8 @@ public class Course implements Cloneable {
     }
 
     /**
-     * Return a cloned copy, because a private object shouldn't be allowed free.
+     * Return a cloned copy, because a private object shouldn't
+     * be allowed freely to access.
      *
      * @return
      */
@@ -133,8 +156,14 @@ public class Course implements Cloneable {
         return duration;
     }
 
+    /**
+     * Returns the EndTime after shifting.
+     * startTime variable has to be cloned.
+     *
+     * @return
+     */
     public Time getEndTime() {
-        Time endTime = this.startTime;
+        Time endTime = this.startTime.clone();
         endTime.shift(this.duration);
         return endTime;
     }
