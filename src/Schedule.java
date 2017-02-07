@@ -108,7 +108,7 @@ public class Schedule {
     }
 
     /**
-     * Returns the totalCredits from the Hashset.
+     * Returns the totalCredits from the HashSet.
      *
      * @return
      */
