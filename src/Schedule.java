@@ -52,10 +52,10 @@ public class Schedule {
     public Schedule clone() {
         try {
             Schedule schedule = (Schedule) super.clone();
-            schedule.classSchedules = new HashSet<Course>();
-            for (Course currentCourse : this.classSchedules) {
-                schedule.classSchedules.add(currentCourse);
-            }
+            schedule.classSchedules = new HashSet<Course>(classSchedules);
+//            for (Course currentCourse : this.classSchedules) {
+//                schedule.classSchedules.add(currentCourse);
+//            }
             return schedule;
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();

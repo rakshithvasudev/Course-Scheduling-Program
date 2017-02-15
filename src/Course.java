@@ -189,11 +189,11 @@ public class Course implements Cloneable {
             Course course = (Course) super.clone();
             course.days = new LinkedHashSet<>();
             Time startTimeCloned = this.startTime.clone();
-            Time t1 = new Time(startTimeCloned.getHour(), startTimeCloned.getMinute(), startTimeCloned.isPM());
+           // Time t1 = new Time(startTimeCloned.getHour(), startTimeCloned.getMinute(), startTimeCloned.isPM());
             for (Weekday currentDay : this.days) {
                 course.days.add(currentDay);
             }
-            return new Course(course.name, course.credits, days, t1, course.duration);
+            return new Course(course.name, course.credits, days, startTimeCloned, course.duration);
         } catch (CloneNotSupportedException e) {
             return null;
         }
