@@ -7,7 +7,7 @@ import java.util.*;
  * because, it would allow to keep the
  * track of order addition of elements.
  */
-public class Schedule {
+public class Schedule implements Cloneable {
     private Set<Course> classSchedules;
     private int totalCredits;
 
@@ -50,18 +50,16 @@ public class Schedule {
      */
     @Override
     public Schedule clone() {
-        try {
-            Schedule schedule = (Schedule) super.clone();
-            schedule.classSchedules = new HashSet<Course>(classSchedules);
-//            for (Course currentCourse : this.classSchedules) {
-//                schedule.classSchedules.add(currentCourse);
-//            }
-            return schedule;
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
+        try{
+            Schedule copy = (Schedule)super.clone();
+            copy.classSchedules = new LinkedHashSet<>(this.classSchedules);
+            return copy;
+        } catch (CloneNotSupportedException e){
+           e.printStackTrace();
         }
         return null;
     }
+
 
 
     /**

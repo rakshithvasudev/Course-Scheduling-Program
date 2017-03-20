@@ -55,7 +55,6 @@ public class Course implements Cloneable {
      * @returns the possibility of conflict, boolean.
      */
     public boolean conflictsWith(Course course) {
-        boolean containsCourseDuringStartTime, containsCourseDuringEndTime;
         Time courseStartTime = course.startTime;
         Time courseEndTime = course.getEndTime();
         for (Weekday currentDay : course.days) {
@@ -186,27 +185,25 @@ public class Course implements Cloneable {
     @Override
     public Course clone() {
         try {
-            Course course = (Course) super.clone();
-            course.days = new LinkedHashSet<>();
-            Time startTimeCloned = this.startTime.clone();
-           // Time t1 = new Time(startTimeCloned.getHour(), startTimeCloned.getMinute(), startTimeCloned.isPM());
-            for (Weekday currentDay : this.days) {
-                course.days.add(currentDay);
-            }
-            return new Course(course.name, course.credits, days, startTimeCloned, course.duration);
+            Course courseCopy = (Course) super.clone();
+            courseCopy.days = new LinkedHashSet<>(days);
+            courseCopy.startTime = startTime.clone();
+            return courseCopy;
+
         } catch (CloneNotSupportedException e) {
-            return null;
+            e.printStackTrace();
         }
 
+        return null;
     }
 
     @Override
     public int hashCode() {
         int a = 31;
-        a = 31 * this.startTime.getMinute() + this.startTime.getMinute() + 37;
-        a = 31 * this.credits + this.credits;
-        a = 31 * this.duration + this.duration;
-        a = 31 * this.days.size() + this.days.size();
+        a+= 31 * this.startTime.getMinute() + this.startTime.getMinute() + 37;
+        a+= 31 * this.credits + this.credits;
+        a+= 31 * this.duration + this.duration;
+        a+= 31 * this.days.size() + this.days.size();
         return a;
 
     }
